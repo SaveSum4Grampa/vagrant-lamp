@@ -50,26 +50,26 @@ Group <%= node['apache']['group'] %>
 # If your system is serving content from a sub-directory in /srv you must allow
 # access in conf-enabled, or in any related virtual host. e.g.
 #
-#  <Directory /srv/>
-#    Options Indexes FollowSymLinks
-#    AllowOverride None
-#    Require all granted
-#  </Directory>
-#
+<Directory /srv/>
+       Options Indexes FollowSymLinks
+       AllowOverride All
+      Require all granted
+</Directory>
+
 <Directory />
         Options FollowSymLinks
-        AllowOverride None
+        AllowOverride All
         Require all denied
 </Directory>
 
 <Directory /usr/share>
-        AllowOverride None
+        AllowOverride All
         Require all granted
 </Directory>
 
 <Directory <%= node['apache']['docroot_dir'] %>>
         Options Indexes FollowSymLinks
-        AllowOverride None
+        AllowOverride All
         Require all granted
 </Directory>
 
