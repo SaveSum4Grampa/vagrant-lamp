@@ -31,6 +31,8 @@ Vagrant.configure("2") do |config|
   config.vm.network :forwarded_port, guest: 80, host: 8080
   # Forward http port on 8025, used for connecting web browsers to MailHog
   config.vm.network :forwarded_port, guest: 8025, host: 8025
+  # Forward http port on 5000, used for flask
+  config.vm.network :forwarded_port, guest: 5000, host: 5000
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
